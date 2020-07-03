@@ -53,6 +53,10 @@ app.get('/', function(req, res) {
     res.render('intro');
 })
 
+app.get('/home', (req,res) => {
+    res.render('home')
+})
+
 app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile');
 })

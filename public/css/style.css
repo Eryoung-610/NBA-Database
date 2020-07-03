@@ -1,5 +1,8 @@
 body {
     font-family: 'Quicksand', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 #hoopLogo{
@@ -7,3 +10,7 @@ body {
     width:60px;
     height:60px;
 }
+
+  main {
+    flex: 1 0 auto;
+  }

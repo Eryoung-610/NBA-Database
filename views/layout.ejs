@@ -19,14 +19,13 @@
     <header>
         <nav class="black">
             <div class="container valign-wrapper">
-                <img id="hoopLogo" src="/images/basketball-64.png" alt="">
-                <a href="/">NBA Team Builder</a>
+                <img id="hoopLogo" src="/images/basketball-64.png">
+                <a href="/home">NBA Team Builder</a>
                 <div class="container right-align">
                     <% if (currentUser) { %>
                     <a href="/profile">Profile</a>
                     <a href="/auth/logout">Logout</a>
                     <% } else { %>
-                    
                     <a href="/auth/register">Register</a>
                     <a href="/auth/login">Login</a>
                     <% } %>
@@ -36,16 +35,17 @@
 
         </nav>
     </header>
-    <div>
-        <%- body %>
-    </div>
-
+    <main>
+        <div>
+            <%- body %>
+        </div>
+    </main>
     <footer class="black page-footer">
         <div>
             <div class="row">
                 <div class="container">
                     <h5 class="white-text center-align">Socials</h5>
-                    <div class = "center-align">
+                    <div class="center-align">
                         <a href="https://www.linkedin.com/in/eric-young-se/"><img src="/images/linkedin.png" alt=""></a>
                         <a href="https://github.com/Eryoung-610"><img src="/images/github.png" alt=""></a>
                     </div>
@@ -57,7 +57,7 @@
         <div class="white-text black footer-copyright">
             <div class="container">
                 © 2020 Eric Young
-                <a class = "white-text right" id = "aboutMe" href="">About Me</a>
+                <a class="white-text right" id="aboutMe" href="">About Me</a>
             </div>
     </footer>
 
