@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialize CSS&JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="/images/parallaxPhoto3.jpg" id="parallaxPhoto1"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">What is NBA Team Builder?</h2>
+            <h5 class="black-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti fuga non quo ad
+                recusandae, suscipit ipsum vitae laudantium distinctio inventore ut quas tempora exercitationem sit
+                obcaecati est repellendus neque a?</h5>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="/images/parallaxPhoto2.jpg" id="parallaxPhoto2"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.parallax');
+            var instances = M.Parallax.init(elems, {});
+        });
+    </script>
+
+</body>
+
+</html>

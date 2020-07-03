@@ -50,7 +50,7 @@ app.use(function(req, res, next) {
 // ROUTES
 app.get('/', function(req, res) {
     // check to see if user logged in
-    res.render('index');
+    res.render('intro');
 })
 
 app.get('/profile', isLoggedIn, function(req, res) {

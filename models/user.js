@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             validate: {
                 len: {
-                    args: [8, 99],
+                    args: [3, 99],
                     msg: 'Password is of incorrect length. Double check character number.'
                 }
             }

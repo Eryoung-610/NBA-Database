@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Auth Boilerplate</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <% if (currentUser) { %>
-                    <a href="/auth/logout">Logout</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialize CSS&JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Basketball Team Creator</title>
+</head>
+
+<body>
+    <header>
+        <nav class="black">
+            <div class="container valign-wrapper">
+                <img id="hoopLogo" src="/images/basketball-64.png" alt="">
+                <a href="/">NBA Team Builder</a>
+                <div class="container right-align">
+                    <% if (currentUser) { %>
                     <a href="/profile">Profile</a>
-                <% } else { %>
+                    <a href="/auth/logout">Logout</a>
+                    <% } else { %>
                     <a href="/auth/register">Register</a>
                     <a href="/auth/login">Login</a>
-                <% } %>
-            </nav>
-        </header>
-        <div class="container">
-            <h1>Authenticating Users 🐋</h1>
-            <%- body %>
+                    <% } %>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <div>
+        <%- body %>
+    </div>
+
+    <footer class="black page-footer">
+        <div>
+            <div class="row">
+                <div class="container">
+                    <h5 class="white-text center-align">Socials</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                        content.</p>
+                </div>
+
+            </div>
         </div>
-    </body>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Eric Young
+            </div>
+        </div>
+    </footer>
+
+</body>
+
 </html>
