@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "pentaxs5i",
-    "database": "project2-express",
+    "database": "ballislife",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
