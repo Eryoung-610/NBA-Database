@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   player.associate = function(models) {
     // associations can be defined here
+    models.player.belongsTo(models.team)
   };
   return player;
 };
