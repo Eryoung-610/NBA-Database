@@ -1,15 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const team = sequelize.define('team', {
-    name: DataTypes.STRING,
-    location: DataTypes.STRING,
-    arena: DataTypes.STRING,
-    coach: DataTypes.STRING
+    full_name: DataTypes.STRING,
+    conference: DataTypes.STRING,
+    logo: DataTypes.STRING
   }, {});
   team.associate = function(models) {
     // associations can be defined here
     models.team.hasMany(models.player)
-
   };
   return team;
 };

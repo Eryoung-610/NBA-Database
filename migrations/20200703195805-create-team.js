@@ -8,16 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      full_name: {
         type: Sequelize.STRING
       },
-      location: {
+      conference: {
         type: Sequelize.STRING
       },
-      arena: {
-        type: Sequelize.STRING
-      },
-      coach: {
+      logo: {
         type: Sequelize.STRING
       },
       createdAt: {
