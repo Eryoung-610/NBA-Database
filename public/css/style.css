@@ -14,3 +14,19 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+#regForm{
+  border:5px solid black;
+  border-radius: 2em;
+  margin-top: 5%;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: black !important;
+}
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid black !important;
+  box-shadow: 0 1px 0 0 black !important
+}

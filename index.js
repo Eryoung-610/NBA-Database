@@ -63,6 +63,8 @@ app.get('/profile', isLoggedIn, function(req, res) {
 
 // include auth controller
 app.use('/auth', require('./controllers/auth'));
+// include display controller
+app.use('/display', require('./controllers/display'));
 
 // initialize App on Port
 app.listen(process.env.PORT || 3000, function() {

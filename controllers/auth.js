@@ -63,7 +63,7 @@ router.post('/login', function(req, res, next) {
             req.flash('success', 'You are validated and logged in.');
             // if success save session and redirect user
             req.session.save(function() {
-                return res.redirect('/');
+                return res.redirect('/home');
             });
         })
     })(req, res, next);
@@ -71,7 +71,7 @@ router.post('/login', function(req, res, next) {
 
 router.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 // export router

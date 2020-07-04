@@ -1,16 +1,46 @@
-  
-<form action="/auth/register" method="POST">
-    <div class="form-group">
-        <label for="authEmail">Email</label>
-        <input id="authEmail" class="form-control" type="email" name="email">
+<div class="container center-align pt-60" id="regForm">
+    <div class="row center-align">
+        <form class="col s12" action="/auth/register" method="POST">
+            <div class="row center-align">
+                <div class="input-field col s12 black-text">
+                    <i class = "material-icons prefix">assignment_ind</i>
+                    <input type="text" class="validate">
+                    <label for="username" class="">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="fullName" type="text" class="validate">
+                    <label for="fullName" class="">Full Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" class="">Password</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email" class="">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 mt-25">
+                    <button class="btn black waves-effect waves-light" type="submit">Register Now
+                    <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+
+
     </div>
-    <div class="form-group">
-        <label for="authName">Name</label>
-        <input id="authName" class="form-control" type="text" name="name">
-    </div>
-    <div class="form-group">
-        <label for="authPassword">Password</label>
-        <input id="authPassword" class="form-control" type="password" name="password">
-    </div>
-    <input class="btn" type="submit">
-</form>
+
+    </form>
+</div>
+</div>
