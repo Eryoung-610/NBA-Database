@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <!-- Materialize CSS&JS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
@@ -27,27 +26,57 @@
                     <a href="/auth/logout">Logout</a>
                     <% } else { %>
                     <a href="/auth/register">Register</a>
-                    <a href="/auth/login">Login</a>
+                    <a class="modal-trigger" href="#login">Login</a>
                     <% } %>
                 </div>
-
             </div>
+              
+              <div id="login" class="modal ">
+                <h5 class="container modal-close right-align" id = "close">&#10005;</h5>
+                <div class="modal-content center">
+                  <h4>Login Form</h4>
+              
+                  <form action="/auth/login" method = "POST">
+              
+                    <div class="input-field">
+                      <i class="material-icons prefix">person</i>
+                      <input type="email" name = "email" id="name">
+                      <label for="authEmail">Email</label>
+                    </div>
+                    <br>
+              
+                    <div class="input-field">
+                      <i class="material-icons prefix">lock</i>
+                      <input type="password" id="pass">
+                      <label for="pass">Password</label>
+                    </div>
+                    <br>
+              
+                    
+                    <input type="submit" value="Login" class="btn btn-large">
+                    
+                  </form>
+                </div>
+              </div>
 
         </nav>
     </header>
+
     <main>
         <div>
             <%- body %>
         </div>
     </main>
+
     <footer class="black page-footer">
         <div>
             <div class="row">
                 <div class="container">
                     <h5 class="white-text center-align">Socials</h5>
                     <div class="center-align">
-                        <a href="https://www.linkedin.com/in/eric-young-se/"><img src="/images/linkedin.png" alt=""></a>
-                        <a href="https://github.com/Eryoung-610"><img src="/images/github.png" alt=""></a>
+                        <a href="https://www.linkedin.com/in/eric-young-se/"><img src="/images/linkedin.png"
+                                alt="Linkedin"></a>
+                        <a href="https://github.com/Eryoung-610"><img src="/images/github.png" alt="Github"></a>
                     </div>
                 </div>
 
@@ -57,9 +86,19 @@
         <div class="white-text black footer-copyright">
             <div class="container">
                 © 2020 Eric Young
-                <a class="white-text right" id="aboutMe" href="">About Me</a>
+                <a class="white-text right" id="aboutMe" href="/">About</a>
             </div>
     </footer>
+
+    <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.modal').modal();
+            $('#modal').modal('open');
+            $('.trigger-modal').modal();
+        })
+    </script>
 
 </body>
 
