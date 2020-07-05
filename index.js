@@ -9,13 +9,14 @@ const passport = require('./config/ppConfig');
 const db = require('./models');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const axios = require('axios')
 
 
 // app setup
 const app = Express();
 app.use(Express.urlencoded({ extended: false }));
 app.use(Express.static(__dirname + "/public"));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(helmet());
@@ -40,24 +41,27 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(function(req, res, next) {
-    res.locals.alert  = req.flash();
+app.use(function (req, res, next) {
+    res.locals.alert = req.flash();
     res.locals.currentUser = req.user;
 
     next();
 });
 
 // ROUTES
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     // check to see if user logged in
     res.render('intro');
 })
 
-app.get('/home', (req,res) => {
-    res.render('home')
-})
+// app.get('/home', (req, res) => {
+//     var balldontlieUrl = 'https://www.balldontlie.io/api/v1/teams'
+//     axios.get(balldontlieUrl).then((apiResponse) => {
+//         res.send(apiResponse.data.data[0].full_name)
+//     })
+// })
 
-app.get('/profile', isLoggedIn, function(req, res) {
+app.get('/profile', isLoggedIn, function (req, res) {
     res.render('profile');
 })
 
@@ -67,6 +71,6 @@ app.use('/auth', require('./controllers/auth'));
 app.use('/display', require('./controllers/display'));
 
 // initialize App on Port
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, function () {
     console.log(`Listening to the smooth sweet sounds of port ${process.env.PORT} in the morning ☕️.`);
 });
