@@ -1,15 +1,17 @@
-var express = require('express')
-const {render} = require('ejs')
+const express = require('express');
 const router = express.Router();
-let db = require('../models')
-const axios = require('axios')
+const db = require('../models');
+const {render} = require('ejs')
+const ejsLayouts = require('express-ejs-layouts')
+// import middleware
+const flash = require('flash');
+const passport = require("../config/ppConfig");
+const axios = require('axios');
 
-router.get('/home', (req, res) => {
-    // var balldontlieUrl = 'https://www.balldontlie.io/api/v1/teams'
-    // axios.get(balldontlieUrl).then((apiResponse) => {
-    //     res.render('display/home')
-    // })
-    res.send("hi")
-})
+// router.get('/home', function(req, res) {
+//     res.send("hi");
+// })
 
+
+// export router
 module.exports = router;

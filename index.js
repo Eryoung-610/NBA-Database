@@ -54,12 +54,14 @@ app.get('/', function (req, res) {
     res.render('intro');
 })
 
-// app.get('/home', (req, res) => {
-//     var balldontlieUrl = 'https://www.balldontlie.io/api/v1/teams'
-//     axios.get(balldontlieUrl).then((apiResponse) => {
-//         res.send(apiResponse.data.data[0].full_name)
-//     })
-// })
+app.get('/home', (req, res) => {
+    var balldontlieUrl = 'https://www.balldontlie.io/api/v1/teams'
+
+    axios.get(balldontlieUrl).then((apiResponse) => {
+        var teamData = apiResponse.data.data;
+        res.render('home', {teamData})
+    })
+})
 
 app.get('/profile', isLoggedIn, function (req, res) {
     res.render('profile');
