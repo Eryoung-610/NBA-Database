@@ -11,6 +11,15 @@ body {
   color:black;
 }
 
+.brand-logo {
+  font-weight:700;
+  font-style:italic;
+}
+
+#ballLogo{
+  height:48px;
+  width:48px;
+}
 
 li{
   text-decoration: none;
@@ -28,7 +37,6 @@ main {
 #regForm{
   border:5px solid black;
   border-radius: 2em;
-  margin-top: 5%;
 }
 
 /* label focus color */
@@ -43,4 +51,8 @@ main {
 
 #login{
   color:black;
+}
+
+#test {
+  border:2px solid red;
 }

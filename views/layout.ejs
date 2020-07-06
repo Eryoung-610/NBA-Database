@@ -29,8 +29,7 @@
 
         <nav class = "black valign-wrapper">
             <div class="container nav-wrapper">
-              <a href="#" class = "brand-logo"><img src = "/images/basketball-64.png">
-              NBA Team Builder</a>
+                <a href="/home" class="brand-logo"><img src = "/images/basketball-64.png" id = "ballLogo">NBA TEAM BUILDER</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <% if (currentUser) { %>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
@@ -55,7 +54,7 @@
             <div id="login" class="modal">
                 <h5 class="container modal-close right-align" id="close">&#10005;</h5>
                 <div class="container modal-content center">
-                    <h4>Login Form</h4>
+                    <h4>Login</h4>
 
                     <form action="/auth/login" method="POST">
 
@@ -126,6 +125,7 @@
             $('.modal').modal();
             $('#modal').modal('open');
             $('.trigger-modal').modal();
+            $('.sidenav').sidenav();
             $(".dropdown-trigger").dropdown({ hover: true });
         })
     </script>
