@@ -66,6 +66,8 @@ app.get('/profile', isLoggedIn, function (req, res) {
 app.use('/auth', require('./controllers/auth'));
 // include display controller
 app.use('/team', require('./controllers/team'));
+// include player controller
+app.use('/player', require('./controllers/player'));
 
 // initialize App on Port
 app.listen(process.env.PORT || 3000, function () {

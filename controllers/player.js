@@ -9,21 +9,11 @@ const passport = require("../config/ppConfig");
 const axios = require('axios');
 
 router.get('/', (req,res) => {
-    db.team.findAll()
-    .then((teams) => {
-        res.render('team/index.ejs', {teams})
-    }).catch(err => {
-        res.send(err)
-    })
-})
-
-router.get('/:id', (req,res) => {
-    db.team.findOne({
-        where: {id: req.params.id},
-    })
-    .then((team) => {
-        res.render('team/show', {team})
-    }).catch(err => {
+    var bdlUrl = 'https://www.balldontlie.io/api/v1/players'
+    axios.get(bdlUrl).then((apiResponse) => {
+        var player = apiResponse.data.data
+        res.render('player/index.ejs', {player})
+    }).catch(err=>{
         res.send(err)
     })
 })

@@ -20,6 +20,7 @@
 
     <div class="center-align" id = "teamContainer">
         <% teams.forEach(function(team) { %>
+            <a href="/team/<%= team.id %>" id = "teamName">
         <div class="row" id = "teamCard">
             <div class="col s10 l5" id = "teamCard">
                 <div class="card" id = "teamCard">
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </div>
+        </a>
 
         <% }) %>
     </div>

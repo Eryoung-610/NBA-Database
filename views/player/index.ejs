@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
-<body>
-    
-<div class = "container center-align">
-    <%= team.full_name %>
-</div>
 
+<body>
+    <% for(var i = 0; i < player.length;i++){ %>
+        <p><%= player[i].first_name + " " + player[i].last_name %></p>
+    <% } %>
 </body>
+
 </html>
