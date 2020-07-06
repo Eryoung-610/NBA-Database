@@ -21,6 +21,25 @@ body {
   width:48px;
 }
 
+#teamLogo{
+  height:128px;
+  width:128px;
+}
+
+#teamCard{
+  display:inline-block
+}
+
+#teamContainer{
+  width:70%;
+  margin:0 auto;
+}
+
+.card{
+  height:250px;
+  width:250px;
+}
+
 li{
   text-decoration: none;
   list-style-type:none;

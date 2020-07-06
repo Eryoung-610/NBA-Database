@@ -5,20 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="container" style="border:2px solid red;">
-        <div class="row">
-            <% teams.forEach(function(team) { %>
-            <div class="col">
-                <h5><%= team.full_name %></h5>
-                <img src="<%= team.logo %>">
-                <% }) %>
+    <form>
+        <div class="container input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+
+    <div class="center-align" id = "teamContainer">
+        <% teams.forEach(function(team) { %>
+        <div class="row" id = "teamCard">
+            <div class="col s10 l5" id = "teamCard">
+                <div class="card" id = "teamCard">
+                    <div class="card-content center-align" id = "teamCard">
+                        <h5><%= team.full_name %></h5>
+                        <img id="teamLogo" src="<%= team.logo %>">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <% }) %>
     </div>
+
 </body>
 
 </html>
