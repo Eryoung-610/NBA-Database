@@ -7,18 +7,10 @@ body {
     flex-direction: column;
 }
 
-ul.dropdown-content.select-dropdown li span {
-  color: black; /* no need for !important :) */
+.dropdown-content{
+  color:black;
 }
 
-a {
-  color:white;
-  text-decoration: none;
-}
-
-#nav-mobile{
-  margin-left: 20%;
-}
 
 li{
   text-decoration: none;
@@ -27,25 +19,6 @@ li{
 
 ul{
   list-style-type:none;
-}
-
-nav a {
-  margin: 10px;
-}
-
-nav {
-  height:80px;
-}
-
-#hoopLogo{
-    margin-top: 45%;
-    width:64px;
-    height:64px;
-}
-
-#title{
-  margin-left: 10px;
-  width:200px;
 }
 
 main {
