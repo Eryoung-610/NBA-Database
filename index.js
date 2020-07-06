@@ -55,12 +55,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/home', (req, res) => {
-    var balldontlieUrl = 'https://www.balldontlie.io/api/v1/teams'
-
-    axios.get(balldontlieUrl).then((apiResponse) => {
-        var teamData = apiResponse.data.data;
-        res.render('home', {teamData})
-    })
+    res.render('home')
 })
 
 app.get('/profile', isLoggedIn, function (req, res) {
@@ -70,7 +65,7 @@ app.get('/profile', isLoggedIn, function (req, res) {
 // include auth controller
 app.use('/auth', require('./controllers/auth'));
 // include display controller
-app.use('/display', require('./controllers/display'));
+app.use('/team', require('./controllers/team'));
 
 // initialize App on Port
 app.listen(process.env.PORT || 3000, function () {

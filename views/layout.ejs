@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/kmk5ajr.css">
     <!-- Materialize CSS&JS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Materialize Icons -->
@@ -16,53 +17,81 @@
 
 <body>
     <header>
-        <nav class="black">
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Team</a></li>
+            <li><a href="#!">Player</a></li>
+        </ul>
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">Team</a></li>
+            <li><a href="#!">Player</a></li>
+        </ul>
+
+        <nav class="black valign-wrapper">
             <div class="container valign-wrapper">
-                <img id="hoopLogo" src="/images/basketball-64.png">
-                NBA Team Builder
-                <div class="container right-align">
+
+                <a href="/">
+                    <img id="hoopLogo" src="/images/basketball-64.png">
+                </a>
+                <a href="/">
+                    <h5 id="title">NBA Team Builder</h5>
+                </a>
+
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <% if (currentUser) { %>
-                    <a href="/profile">Profile</a>
-                    <a href="/auth/logout">Logout</a>
+                        <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Create<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/auth/logout">Logout</a></li>
                     <% } else { %>
-                    <a href="/auth/register">Register</a>
-                    <a class="modal-trigger" href="#login">Login</a>
+                        <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Create<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a href="/auth/register">Register</a></li>
+                        <li><a class="modal-trigger" href="#login">Login</a></li>
                     <% } %>
+                </ul>
+
+            </div>
+
+            <div id="login" class="modal">
+                <h5 class="container modal-close right-align" id="close">&#10005;</h5>
+                <div class="container modal-content center">
+                    <h4>Login Form</h4>
+
+                    <form action="/auth/login" method="POST">
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">person</i>
+                            <input type="email" name="email" id="authEmail">
+                            <label for="authEmail">Email</label>
+                        </div>
+                        <br>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input type="password" id="pass">
+                            <label for="pass">Password</label>
+                        </div>
+                        <br>
+
+                        <div>
+                            <a href=""></a>
+                        </div>
+
+                        <input type="submit" value="Login" class="black btn">
+
+                    </form>
                 </div>
             </div>
-              
-              <div id="login" class="modal ">
-                <h5 class="container modal-close right-align" id = "close">&#10005;</h5>
-                <div class="modal-content center">
-                  <h4>Login Form</h4>
-              
-                  <form action="/login" method = "POST">
-              
-                    <div class="input-field">
-                      <i class="material-icons prefix">person</i>
-                      <input type="email" name = "email" id="authEmail">
-                      <label for="authEmail">Email</label>
-                    </div>
-                    <br>
-              
-                    <div class="input-field">
-                      <i class="material-icons prefix">lock</i>
-                      <input type="password" id="pass">
-                      <label for="pass">Password</label>
-                    </div>
-                    <br>
-              
-                    <div>
-                        <a href=""></a>
-                    </div>
-                    
-                    <input type="submit" value="Login" class="btn btn-large">
-                    
-                  </form>
-                </div>
-              </div>
 
         </nav>
+
+
     </header>
 
     <main>
@@ -70,6 +99,8 @@
             <%- body %>
         </div>
     </main>
+
+
 
     <footer class="black page-footer">
         <div>
@@ -93,13 +124,14 @@
             </div>
     </footer>
 
-    <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.modal').modal();
             $('#modal').modal('open');
             $('.trigger-modal').modal();
+            $(".dropdown-trigger").dropdown({ hover: true });
         })
     </script>
 

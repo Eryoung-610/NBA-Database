@@ -8,9 +8,12 @@ const flash = require('flash');
 const passport = require("../config/ppConfig");
 const axios = require('axios');
 
-// router.get('/home', function(req, res) {
-//     res.send("hi");
-// })
+router.get('/', (req,res) => {
+    db.team.findAll()
+    .then((teams) => {
+        res.send(teams)
+    })
+})
 
 
 // export router

@@ -1,19 +1,56 @@
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-#hoopLogo{
-    margin-top: 3px;
-    width:60px;
-    height:60px;
+ul.dropdown-content.select-dropdown li span {
+  color: black; /* no need for !important :) */
 }
 
-  main {
-    flex: 1 0 auto;
-  }
+a {
+  color:white;
+  text-decoration: none;
+}
+
+#nav-mobile{
+  margin-left: 20%;
+}
+
+li{
+  text-decoration: none;
+  list-style-type:none;
+}
+
+ul{
+  list-style-type:none;
+}
+
+nav a {
+  margin: 10px;
+}
+
+nav {
+  height:80px;
+}
+
+#hoopLogo{
+    margin-top: 45%;
+    width:64px;
+    height:64px;
+}
+
+#title{
+  margin-left: 10px;
+  width:200px;
+}
+
+main {
+  flex: 1 0 auto;
+}
 
 #regForm{
   border:5px solid black;
