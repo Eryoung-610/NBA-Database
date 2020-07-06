@@ -11,7 +11,9 @@ const axios = require('axios');
 router.get('/', (req,res) => {
     db.team.findAll()
     .then((teams) => {
-        res.send(teams)
+        res.render('team/index.ejs', {teams})
+    }).catch(err => {
+        res.send(err)
     })
 })
 
