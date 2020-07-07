@@ -17,6 +17,10 @@ module.exports = {
       logo: {
         type: Sequelize.STRING
       },
+      userId: {
+        allowNull: true,
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

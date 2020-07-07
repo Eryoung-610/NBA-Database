@@ -18,7 +18,7 @@ module.exports = {
       },{
         full_name: 'Brooklyn Nets',
         conference: 'East',
-        logo: 'https://cdn.iconscout.com/icon/free/png-256/brooklyn-nets-1880122-1593205.png',
+        logo: 'https://d1si3tbndbzwz9.cloudfront.net/basketball/team/2/logo.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },{
@@ -36,7 +36,7 @@ module.exports = {
       },{
         full_name: 'Cleveland Cavaliers',
         conference: 'East',
-        logo: 'https://images.vexels.com/media/users/3/129814/isolated/lists/fe234dae36c4393af684ce7307f434f0-cleveland-avaliers-logo.png',
+        logo: 'https://d1si3tbndbzwz9.cloudfront.net/basketball/team/7/logo.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },{

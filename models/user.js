@@ -6,6 +6,9 @@ const bcrypt = require('bcrypt');
 module.exports = function(sequelize, DataTypes) {
     // define user object
     const user = sequelize.define('user', {
+        userName: {
+            type: DataTypes.STRING
+        },
         email: {
             type: DataTypes.STRING,
             validate: {
@@ -45,6 +48,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     user.associate = function(models) {
         // TODO: any user associations you want
+        models.user.hasMany(models.team)
     }
 
     // validPassword definition to validate password at user login
