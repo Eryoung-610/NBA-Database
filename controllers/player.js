@@ -9,7 +9,7 @@ const passport = require("../config/ppConfig");
 const axios = require('axios');
 
 router.get('/', (req,res) => {
-    var bdlUrl = 'https://www.balldontlie.io/api/v1/players'
+    var bdlUrl = 'https://www.balldontlie.io/api/v1/players?per_page=50'
     axios.get(bdlUrl).then((apiResponse) => {
         var player = apiResponse.data.data
         res.render('player/index.ejs', {player})

@@ -8,9 +8,44 @@
 </head>
 
 <body>
-    <% for(var i = 0; i < player.length;i++){ %>
-        <p><%= player[i].first_name + " " + player[i].last_name %></p>
-    <% } %>
+
+    <form>
+        <div class="container input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+        </div>
+    </form>
+
+    <div class="center-align" id="teamContainer">
+        <% for(var i = 0; i < player.length;i++){ %>
+        <a href="/player/<%= player.id %>" id="playerName">
+            <div class="row" id="playerCard">
+                <div class="col s10 l5" id="playerCard">
+                    <div class="card" id="playerCard">
+                        <div class="card-content center-align" id="playerCard">
+                            <img id="playerSilhouette"
+                                src="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png">
+                            <p><%= player[i].first_name + " " + player[i].last_name %></p>
+                            <p><%= player[i].team.full_name %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <% } %>
+
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+
 </body>
 
 </html>

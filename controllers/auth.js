@@ -40,9 +40,9 @@ router.post('/register', function(req, res) {
 
 
 // login get route
-router.get('/login', function(req, res) {
-    res.render('auth/login');
-});
+// router.get('/login', function(req, res) {
+//     res.render('auth/login');
+// });
 
 // login post route
 router.post('/login', function(req, res, next) {
@@ -50,7 +50,7 @@ router.post('/login', function(req, res, next) {
         // if no user authenticated
         if (!user) {
             req.flash('error', 'Invalid username or password');
-            return res.redirect('/auth/login');
+            return res.redirect('/home');
         }
         if (error) {
             return next(error);

@@ -30,6 +30,12 @@ body {
   display:inline-block
 }
 
+#playerCard{
+  display:inline-block;
+  width:150px;
+  height:150px;
+}
+
 #teamContainer{
   width:70%;
   margin:0 auto;
@@ -38,6 +44,11 @@ body {
 #teamName {
   text-decoration: none;
   color:black;
+}
+
+#playerSilhouette{
+  height:32px;
+  width:32px;
 }
 
 .card{
