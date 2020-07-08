@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
+
 <body>
-    
-<div class = "container center-align">
-    <%= player %>
-</div>
+
+    <div class="container center-align">
+        <div class="left-align">
+            <a href="/player"><i class="black-text material-icons">arrow_back</i></a>
+        </div>
+
+        <img src="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png" alt="">
+        <div>
+            <h3><%= player.first_name + " " + player.last_name %></h3>
+        </div>
+
+        <br>
+        <div>
+            <h4>Statistics</h4>
+            <hr>
+        </div>
+
+
+
+
+
+    </div>
 
 </body>
+
 </html>
