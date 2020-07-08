@@ -20,18 +20,57 @@
         </div>
 
         <div>
-            <h4>Roster</h4>
+            <h4>Front Court</h4>
+            <hr>
+
+            <div>
+                <% team.players.forEach((player) => { %>
+                <% if (player.position === "PG" || player.position === "SG" || player.position === "G") { %>
+                <div class="card" id="rosterCard">
+                    <img src="<%= player.picture %>" alt="">
+                    <h6><%= player.first_name + " " + player.last_name %></h6>
+                    <p><%= player.position %></p>
+                </div>
+                <% } %>
+                <% }) %>
+            </div>
         </div>
-        <hr>
 
-        <% team.players.forEach((player) => { %>
-            <p>
-               <img src="<%= player.picture %>" alt=""> 
-                <%= player.first_name + " " + player.last_name %>
-            </p>
+        <div>
+            <h4>Back Court</h4>
+            <hr>
 
-        <% }) %>
-    </div>
+            <div>
+                <% team.players.forEach((player) => { %>
+                <% if (player.position === "SF" || player.position === "PF" || player.position === "C" || player.position ==="F-C") { %>
+                <div class="card" id="rosterCard">
+                    <img src="<%= player.picture %>" alt="">
+                    <h6><%= player.first_name + " " + player.last_name %></h6>
+                    <p><%= player.position %></p>
+                </div>
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+
+        <div>
+            <h4>Flex</h4>
+            <hr>
+
+            <div>
+                <% team.players.forEach((player) => { %>
+                <% if (player.position === "G-F") { %>
+                <div class="card" id="rosterCard">
+                    <img src="<%= player.picture %>" alt="">
+                    <h6><%= player.first_name + " " + player.last_name %></h6>
+                    <p><%= player.position %></p>
+                </div>
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+
+
 
 </body>
 

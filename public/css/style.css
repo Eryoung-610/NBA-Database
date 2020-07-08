@@ -30,6 +30,12 @@ body {
   display:inline-block
 }
 
+#rosterCard{
+  display:inline-block;
+  width:200px;
+  height:150px;
+}
+
 #playerCard{
   display:inline-block;
   width:150px;
