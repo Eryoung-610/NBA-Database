@@ -10,21 +10,27 @@
 <body>
 
     <div class="container center-align">
-        <div class = "left">
+        <div class="left">
             <a href="/team"><i class="black-text material-icons">arrow_back</i></a>
         </div>
 
         <div>
             <h3><%= team.full_name %></h3>
-            <img id = "showLogo" src="<%= team.logo %>" alt="">
+            <img id="showLogo" src="<%= team.logo %>" alt="">
         </div>
 
         <div>
             <h4>Roster</h4>
         </div>
+        <hr>
 
+        <% team.players.forEach((player) => { %>
+            <p>
+               <img src="<%= player.picture %>" alt=""> 
+                <%= player.first_name + " " + player.last_name %>
+            </p>
 
-
+        <% }) %>
     </div>
 
 </body>

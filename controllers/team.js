@@ -20,6 +20,7 @@ router.get('/', (req,res) => {
 router.get('/:id', (req,res) => {
     db.team.findOne({
         where: {id: req.params.id},
+        include: [db.player]
     })
     .then((team) => {
         res.render('team/show', {team})
