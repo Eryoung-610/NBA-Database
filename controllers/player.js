@@ -18,17 +18,17 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/:id', (req, res) => {
-    let playerId = req.params.id
-    var bdlUrl = "https://www.balldontlie.io/api/v1/players/" + playerId
-    var statUrl = "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=" + playerId
-    axios.get(bdlUrl).then((apiResponse) => {
-        var player = apiResponse.data
-        res.render('player/show', { player })
-    }).catch(err => {
-        res.send(err)
-    })
-})
+// router.get('/:id', (req, res) => {
+//     let playerId = req.params.id
+//     var bdlUrl = "https://www.balldontlie.io/api/v1/players/" + playerId
+//     var statUrl = "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=" + playerId
+//     axios.get(bdlUrl).then((apiResponse) => {
+//         var player = apiResponse.data
+//         res.render('player/show', { player })
+//     }).catch(err => {
+//         res.send(err)
+//     })
+// })
 
 router.get('/:id', (req, res) => {
     let playerId = req.params.id
@@ -37,10 +37,10 @@ router.get('/:id', (req, res) => {
     axios.all([
         axios.get(bdlUrl),
         axios.get(statUrl)
-    ]).then(res => {
-        // var player = res[0].data
-        // console.log(res[0].data);
-        // console.log(res[1].data.data.games_played)
+    ]).then((player,stats) => {
+        console.log(statUrl)
+        // console.log(player)
+        console.log(stats.data)
         res.render('player/show')
     }).catch(err => {
         res.send(err)

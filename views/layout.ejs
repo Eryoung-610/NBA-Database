@@ -18,70 +18,74 @@
 <body>
     <header>
 
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/team">Team</a></li>
-            <li><a href="/player">Player</a></li>
+        <ul id="dropdown1" class="black dropdown-content">
+            <li id="test"><a href="/team">Team</a></li>
+            <li id="test"><a href="/player">Player</a></li>
         </ul>
-        <ul id="dropdown2" class="dropdown-content">
-            <li><a href="#!">Team</a></li>
-            <li><a href="#!">Player</a></li>
+        <ul id="dropdown2" class="black dropdown-content">
+            <li id="test"><a href="#!">Team</a></li>
+            <li id="test"><a href="#!">Player</a></li>
         </ul>
 
-        <nav class = "black valign-wrapper">
+        <nav class="black valign-wrapper">
             <div class="container nav-wrapper">
-                <a href="/home" class="brand-logo"><img src = "/images/basketball-64.png" id = "ballLogo">NBA TEAM BUILDER</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <% if (currentUser) { %>
+                <a href="/home" class="brand-logo" id = "logoTitle"><img src="/images/basketball-64.png" id="ballLogo">NBA TEAM
+                    BUILDER</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <% if (currentUser) { %>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Create<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/profile"><img class="circle"
+                            src="images/Hawks.png"></a>
+                    </li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/auth/logout">Logout</a></li>
-                <% } else { %>
+                    <% } else { %>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a href="#" class="dropdown-trigger" data-target="dropdown2" >Create<i
+                    <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Create<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="/auth/register">Register</a></li>
                     <li><a class="modal-trigger" href="#login">Login</a></li>
-                <% } %>
-              </ul>
+                    <% } %>
+                </ul>
             </div>
-          </nav>
+        </nav>
 
 
-            <div id="login" class="modal">
-                <h5 class="container modal-close right-align" id="close">&#10005;</h5>
-                <div class="container modal-content center">
-                    <h4>Login</h4>
+        <div id="login" class="modal">
+            <h5 class="container modal-close right-align" id="close">&#10005;</h5>
+            <div class="container modal-content center">
+                <h4>Login</h4>
 
-                    <form action="/auth/login" method="POST">
+                <form action="/auth/login" method="POST">
 
-                        <div class="input-field">
-                            <i class="material-icons prefix">person</i>
-                            <input type="email" name="email" id="authEmail">
-                            <label for="authEmail">Email</label>
-                        </div>
-                        <br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="email" name="email" id="authEmail">
+                        <label for="authEmail">Email</label>
+                    </div>
+                    <br>
 
-                        <div class="input-field">
-                            <i class="material-icons prefix">lock</i>
-                            <input type="password" name = "password" id="pass">
-                            <label for="pass">Password</label>
-                        </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" name="password" id="pass">
+                        <label for="pass">Password</label>
+                    </div>
 
-                        <input type="submit" value="Login" class="black btn">
-                        <br>
+                    <input type="submit" value="Login" class="black btn">
+                    <br>
 
-                        <br>
-                        <div>
-                            <a href="auth/register">Not a member? Register Here</a>
-                        </div>
+                    <br>
+                    <div>
+                        <a href="auth/register">Not a member? Register Here</a>
+                    </div>
 
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
 
         </nav>
 

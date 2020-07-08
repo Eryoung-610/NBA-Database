@@ -14,9 +14,21 @@ body {
 .brand-logo {
   font-weight:700;
   font-style:italic;
+  margin-bottom: 2%;
+}
+
+#logoTitle{
+  height:65px;
+}
+
+.circle{
+  height:30px;
+  width:30px;
+  margin-top: 50%;
 }
 
 #ballLogo{
+  margin-top: 2%;
   height:48px;
   width:48px;
 }
@@ -97,4 +109,8 @@ main {
 
 #login{
   color:black;
+}
+
+.dropdown-content{
+  color:white; /* no need for !important :) */
 }
