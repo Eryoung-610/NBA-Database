@@ -17,6 +17,9 @@ module.exports = {
       position: {
         type: Sequelize.STRING
       },
+      picture: {
+        type: Sequelize.STRING
+      },
       teamId: {
         type: Sequelize.INTEGER
       },

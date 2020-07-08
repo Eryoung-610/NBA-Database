@@ -41,6 +41,11 @@ body {
   margin:0 auto;
 }
 
+#showLogo{
+  width:256px;
+  height:256px;
+}
+
 #teamName {
   text-decoration: none;
   color:black;
