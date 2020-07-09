@@ -78,6 +78,11 @@ body {
   width:32px;
 }
 
+#playerPicture{
+  height:70px;
+  width:70px;
+}
+
 .card{
   height:250px;
   width:250px;

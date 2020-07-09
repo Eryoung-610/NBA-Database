@@ -29,5 +29,18 @@ router.get('/:id', (req,res) => {
     })
 })
 
+router.post('/', (req,res) => {
+    db.team.create({
+        full_name: req.body.name,
+        conference: req.body.conference,
+        logo: req.body.logo,
+        userId: req.body.userId
+    }).then((response) => {
+        res.redirect('/')
+    }).catch(err => {
+        res.send(err)
+    })
+})
+
 // export router
 module.exports = router;

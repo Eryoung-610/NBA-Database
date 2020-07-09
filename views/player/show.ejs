@@ -16,7 +16,7 @@
 
         <img src="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png" alt="">
         <div>
-            <h3><%= // player.first_name + " " + player.last_name %></h3>
+            <h3><%= playerDetails.first_name+ " "+ playerDetails.last_name %></h3>
         </div>
 
         <br>
@@ -25,6 +25,12 @@
             <hr>
         </div>
 
+        <div class="left-align">
+            <h5>Minutes Per Game: <%= playerStats.data[0].min%></h5>
+            <h5>Points Per Game: <%= playerStats.data[0].pts%></h5>
+            <h5>Rebounds Per Game: <%= playerStats.data[0].reb%></h5>
+            <h5>Assists Per Game: <%= playerStats.data[0].ast%></h5>
+        </div>
 
 
 
