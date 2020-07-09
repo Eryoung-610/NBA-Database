@@ -26,11 +26,13 @@
             <div>
                 <% team.players.forEach((player) => { %>
                 <% if (player.position === "PG" || player.position === "SG" || player.position === "G") { %>
-                <div class="card" id="rosterCard">
-                    <img id = "playerPicture" src="<%= player.picture %>" alt="">
-                    <h6><%= player.first_name + " " + player.last_name %></h6>
-                    <p><%= player.position %></p>
-                </div>
+                <a href="/player/view/<%= player.id %>" id="playerName">
+                    <div class="card" id="rosterCard">
+                        <img id="playerPicture" src="<%= player.picture %>" alt="">
+                        <h6><%= player.first_name + " " + player.last_name %></h6>
+                        <p><%= player.position %></p>
+                    </div>
+                </a>
                 <% } %>
                 <% }) %>
             </div>
@@ -44,7 +46,7 @@
                 <% team.players.forEach((player) => { %>
                 <% if (player.position === "SF" || player.position === "PF" || player.position === "C" || player.position ==="F-C") { %>
                 <div class="card" id="rosterCard">
-                    <img id = "playerPicture" src="<%= player.picture %>" alt="">
+                    <img id="playerPicture" src="<%= player.picture %>" alt="">
                     <h6><%= player.first_name + " " + player.last_name %></h6>
                     <p><%= player.position %></p>
                 </div>
@@ -61,7 +63,7 @@
                 <% team.players.forEach((player) => { %>
                 <% if (player.position === "G-F") { %>
                 <div class="card" id="rosterCard">
-                    <img id = "playerPicture" src="<%= player.picture %>" alt="">
+                    <img id="playerPicture" src="<%= player.picture %>" alt="">
                     <h6><%= player.first_name + " " + player.last_name %></h6>
                     <p><%= player.position %></p>
                 </div>

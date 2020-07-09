@@ -25,14 +25,25 @@
             <hr>
         </div>
 
+        <% if (playerStats.data[0].min && playerStats.data[0].pts && playerStats.data[0].reb && playerStats.data[0].ast) { %>
         <div class="left-align">
+
             <h5>Minutes Per Game: <%= playerStats.data[0].min%></h5>
             <h5>Points Per Game: <%= playerStats.data[0].pts%></h5>
             <h5>Rebounds Per Game: <%= playerStats.data[0].reb%></h5>
             <h5>Assists Per Game: <%= playerStats.data[0].ast%></h5>
+            <% } else { %>
+            <h5>No current stats for this sesason</h5>
+            <% } %>
+
         </div>
 
-
+        <!-- if(...min) {
+    ...
+    else {
+        MESSAGE
+    }
+} -->
 
 
     </div>
