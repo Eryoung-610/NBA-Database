@@ -26,7 +26,7 @@
         </div>
 
         <div class="left-align">
-            <% if (playerStats.data[0].min && playerStats.data[0].pts && playerStats.data[0].reb && playerStats.data[0].ast) { %>
+            <% if (playerStats.data.length > 1) { %>
                 <h5>Minutes Per Game: <%= playerStats.data[0].min%></h5>
                 <h5>Points Per Game: <%= playerStats.data[0].pts%></h5>
                 <h5>Rebounds Per Game: <%= playerStats.data[0].reb%></h5>
