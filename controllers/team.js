@@ -64,5 +64,16 @@ router.delete('/delete/:id', (req, res) => {
     )
 })
 
+// UPDATE
+// db.user.update({
+//     age:99
+// }, {
+//     where: {
+//         email: 'b.hague@ga.co'
+//     }
+// }).then(updated => {
+//     console.log(updated);
+// }).catch(errorHandler);
+
 // export router
 module.exports = router;
