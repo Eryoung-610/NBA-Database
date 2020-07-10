@@ -60,20 +60,28 @@ router.delete('/delete/:id', (req, res) => {
             id: req.params.id
         }
     }).then(
-        res.redirect("/")
+        res.redirect("/team")
     )
 })
 
 // UPDATE
-// db.user.update({
-//     age:99
-// }, {
-//     where: {
-//         email: 'b.hague@ga.co'
-//     }
-// }).then(updated => {
-//     console.log(updated);
-// }).catch(errorHandler);
+router.put('/edit/:id', (req, res) => {
+    db.team.update({
+        full_name: req.body.name,
+        conference: req.body.conference,
+        logo: req.body.logo,
+        userId: req.body.userId
+    }, {
+        where: {
+           id: req.params.id 
+        }
+    }).then(updated => {
+        res.redirect('/team')
+    }).catch(err => {
+        res.send(err)
+    });
+})
+
 
 // export router
 module.exports = router;

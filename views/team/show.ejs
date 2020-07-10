@@ -10,12 +10,68 @@
 <body>
 
     <div class="container center-align">
-        <div class="left">
-            <a href="/team"><i class="black-text material-icons">arrow_back</i></a>
+        <div>
+            <div class="left-align">
+                <a href="/team" class="left-align"><i class="black-text material-icons">arrow_back</i></a>
+            </div>
+
+
+            <% if (team.id > 30 && team.userId === currentUser.id) { %>
+            <div class="right-align">
+                <a href="#edit" class="modal-trigger right-align"><i class="black-text material-icons">edit</i></a>
+            </div>
+
+            <div id = "edit" class = "modal">
+                <form action="/team/edit/<%=team.id%>/?_method=PUT" method="POST">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input value ="<%= team.full_name %>" id="fullName" type="text" class="validate" name="name" >
+                            <label for="name" class="">Team Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">language</i>
+                            <input value = "<%= team.conference %>" id="text" type="text" class="validate" name="conference">
+                            <label for="conference" class="">Conference</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">image</i>
+                            <input value="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png" id="logo" type="text" name = "logo" class="validate">
+                            <label for="logo" class="">Logo URL</label>
+                        </div>
+                    </div>
+        
+                    <div class="row" hidden>
+                        <div class="input-field col s12">
+                            <input type="text" class="validate" name="userId" hidden
+                            value = "<%= currentUser.id %>">
+                        </div>
+                    </div>
+        
+        
+                    <div class="row">
+                        <div class="col s12 mt-25">
+                            <button class="btn black waves-effect waves-light" type="submit">CONFIRM
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <% } %>
+
         </div>
 
         <div>
             <h3><%= team.full_name %></h3>
+            <h5><%= team.conference + "ern" + " " + "Conference"%></h5>
             <img id="showLogo" src="<%= team.logo %>" alt="">
         </div>
 
@@ -26,13 +82,11 @@
             <div>
                 <% team.players.forEach((player) => { %>
                 <% if (player.position === "PG" || player.position === "SG" || player.position === "G") { %>
-                <a href="/player/view/<%= player.id %>" id="playerName">
                     <div class="card" id="rosterCard">
                         <img id="playerPicture" src="<%= player.picture %>" alt="">
                         <h6><%= player.first_name + " " + player.last_name %></h6>
                         <p><%= player.position %></p>
                     </div>
-                </a>
                 <% } %>
                 <% }) %>
             </div>
@@ -72,14 +126,14 @@
             </div>
         </div>
 
-<% if (team.id > 30) { %>
+        <% if (team.id > 30 && team.userId === currentUser.id) { %>
         <div>
-            <form action="/team/delete/<%= team.id %>/?_method=DELETE" method = "POST">
-                <input type = "hidden" name="_method" value="DELETE">
-                <button type="submit">Delete Created Team</button>
+            <form action="/team/delete/<%= team.id %>/?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class = "red btn" type="submit">Delete Created Team <i class = "material-icons right">delete</i></button>
             </form>
         </div>
-<% } %>
+        <% } %>
 
 
 </body>

@@ -18,51 +18,39 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <div>
-                        <i class="material-icons">image</i>
-                    </div>
-                        <select>
-                            <option value="PG">PG</option>
-                            <option value="SG">SG</option>
-                            <option value="G">G</option>
-                            <option value="SF">SF</option>
-                            <option value="PF">PF</option>
-                            <option value="F">F</option>
-                            <option value="C">C</option>
-                            <option value="G-F">G-F</option>
-                            <option value="F-C">F-C</option>
-                        </select>
+                    <select name="position">
+                        <option value="PG">PG</option>
+                        <option value="SG">SG</option>
+                        <option value="G">G</option>
+                        <option value="SF">SF</option>
+                        <option value="PF">PF</option>
+                        <option value="F">F</option>
+                        <option value="C">C</option>
+                        <option value="G-F">G-F</option>
+                        <option value="F-C">F-C</option>
+                    </select>
                     <label>Position</label>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">image</i>
-                      <input value="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png" id="first_name2" type="text" class="validate">
-                      <label class="active" for="first_name2">Picture</label>
+                        <input value="https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png"
+                            id="first_name2" type="text" class="validate" for="picture" name="picture">
+                        <label class="active" for="picture">Picture</label>
                     </div>
-                  </div>
-
-                  <div class="input-field col s12">
-                        <select>
-                            <option value="PG">PG</option>
-                            <option value="SG">SG</option>
-                            <option value="G">G</option>
-                            <option value="SF">SF</option>
-                            <option value="PF">PF</option>
-                            <option value="F">F</option>
-                            <option value="C">C</option>
-                            <option value="G-F">G-F</option>
-                            <option value="F-C">F-C</option>
-                        </select>
-                    <label>Assign To Team</label>
                 </div>
 
-                <div class="row" hidden>
-                    <div class="input-field col s12">
-                        <input type="text" class="validate" name="teamId" required value = "https://en.as.com/img/comunes/fotos/fichas/deportistas/silueta-generica-large.png">
-                        <label for="teamId" class="active"></label>
-                    </div>
+                <div class="input-field col s12">
+                    <select name="teamId">
+                        <% teams.forEach(function(team) { %>
+                            <% if (team.id > 30) { %>
+                        <option value="<%= team.id%>"><%= team.full_name %></option>
+                           <% } %>
+                    <% }) %>       
+                    </select>
+                    
+                    <label>Assign To Team</label>
                 </div>
 
 
