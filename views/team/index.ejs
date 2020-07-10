@@ -19,7 +19,6 @@
     </form>
 
     <div class="center-align" id="teamContainer">
-        <% if (teams.userId = "        ") { %>
         <% teams.forEach(function(team) { %>
 
         <a href="/team/<%= team.id %>" id="teamName">
@@ -35,7 +34,6 @@
             </div>
         </a>
         <% }) %>
-        <% } %>
     </div>
 
     <script>

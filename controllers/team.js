@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const { render } = require('ejs')
-const ejsLayouts = require('express-ejs-layouts')
+const ejsLayouts = require
+const override = require('method-override')('express-ejs-layouts')
 // import middleware
 const flash = require('flash');
 const passport = require("../config/ppConfig");
@@ -47,10 +48,20 @@ router.post('/', (req, res) => {
             userId: req.body.userId
         }
     }).then((response) => {
-        res.redirect('/')
+        res.redirect('/team')
     }).catch(err => {
         res.send(err)
     })
+})
+
+router.delete('/delete/:id', (req, res) => {
+    db.team.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(
+        res.redirect("/")
+    )
 })
 
 // export router

@@ -72,6 +72,14 @@
             </div>
         </div>
 
+<% if (team.id > 30) { %>
+        <div>
+            <form action="/team/delete/<%= team.id %>/?_method=DELETE" method = "POST">
+                <input type = "hidden" name="_method" value="DELETE">
+                <button type="submit">Delete Created Team</button>
+            </form>
+        </div>
+<% } %>
 
 
 </body>

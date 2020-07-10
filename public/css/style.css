@@ -83,6 +83,11 @@ body {
   width:70px;
 }
 
+#playerName {
+  text-decoration: none;
+  color:black;
+}
+
 .card{
   height:250px;
   width:250px;

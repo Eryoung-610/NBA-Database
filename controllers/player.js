@@ -8,7 +8,7 @@ const flash = require('flash');
 const passport = require("../config/ppConfig");
 const axios = require('axios');
 
-router.get('/', (req,res) => {
+router.get('/', (req, res) => {
     res.redirect("/player/1")
 })
 
@@ -28,16 +28,16 @@ router.get('/view/:id', (req, res) => {
     axios.all([
         axios.get(bdlUrl),
         axios.get(statUrl)
-    ]).then(axios.spread((playerResponse,statsResponse) => {
+    ]).then(axios.spread((playerResponse, statsResponse) => {
         var playerDetails = playerResponse.data
         var playerStats = statsResponse.data
-        res.render('player/show', {playerDetails, playerStats})
+        res.render('player/show', { playerDetails, playerStats })
     })).catch(err => {
         res.send("HELHOELHEOl")
     })
 })
 
-router.post('/', (req,res) => {
+router.post('/', (req, res) => {
     db.player.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -45,7 +45,7 @@ router.post('/', (req,res) => {
         picture: req.body.picture,
         teamId: req.body.teamId
     }).then((response) => {
-        res.redirect('/')
+        res.redirect('/team')
     }).catch(err => {
         res.send(err)
     })
@@ -53,7 +53,7 @@ router.post('/', (req,res) => {
 
 router.get('/:pageNum', (req, res) => {
     pageNum = req.params.pageNum
-    var bdlUrl = 'https://www.balldontlie.io/api/v1/players?per_page=50&page=' + pageNum
+    var bdlUrl = 'https://www.balldontlie.io/api/v1/players?per_page=100&page=' + pageNum
     axios.get(bdlUrl).then((apiResponse) => {
         var player = apiResponse.data.data
         res.render('player/index.ejs', { player })
