@@ -12,13 +12,7 @@
 
     <br>
     <br>
-    <!-- <form>
-        <div class="container input-field">
-            <input id="search" type="search" autocomplete="off">
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-        </div>
-    </form> -->
+
 
     <div class="center-align" id="teamContainer">
         <% teams.forEach(function(team) { %>
@@ -36,26 +30,6 @@
             </div>
         </a>
             <%} %>
-        <% }) %>
-    </div>
-
-    <div class="center-align" id="teamContainer">
-        <h3>Created Teams</h3>
-        <% teams.forEach(function(team) { %>
-            <% if (team.userId === currentUser.id) { %>
-        <a href="/team/<%= team.id %>" id="teamName">
-            <div class="row" id="teamCard">
-                <div class="col s10 l5" id="teamCard">
-                    <div class="card" id="teamCard">
-                        <div class="card-content center-align" id="teamCard">
-                            <h5><%= team.full_name %></h5>
-                            <img id="teamLogo" src="<%= team.logo %>">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-            <% } %>
         <% }) %>
     </div>
 

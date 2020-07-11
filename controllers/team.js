@@ -23,8 +23,17 @@ router.get('/new', (req, res) => {
         .then((teams) => {
             res.render('team/new', { teams })
         }).catch(err => {
-            res.send(err)
+            res.status(500).send("error")
         })
+})
+
+router.get('/created', (req,res) => {
+    db.team.findAll()
+    .then((teams) => {
+        res.render('team/created', { teams })
+    }).catch(err => {
+        res.status(400).render("views/home")
+    })
 })
 
 router.get('/:id', (req, res) => {
@@ -48,7 +57,7 @@ router.post('/', (req, res) => {
             userId: req.body.userId
         }
     }).then((response) => {
-        res.redirect('/team')
+        res.redirect('/team/created')
     }).catch(err => {
         res.send(err)
     })
