@@ -44,7 +44,7 @@
                 <div class="input-field col s12">
                     <select name="teamId">
                         <% teams.forEach(function(team) { %>
-                            <% if (team.id > 30) { %>
+                            <% if (team.id > 30 && team.userId === currentUser.id) { %>
                         <option value="<%= team.id%>"><%= team.full_name %></option>
                            <% } %>
                     <% }) %>       
