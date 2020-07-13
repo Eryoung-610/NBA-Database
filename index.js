@@ -60,6 +60,14 @@ app.get('/home', (req, res) => {
     res.render('home')
 })
 
+app.get('/issues', (req,res) => {
+    res.render('issues')
+})
+
+app.get('/restartInfo', (req,res) => {
+    res.render('restartInfo')
+})
+
 app.get('/profile', isLoggedIn, function (req, res) {
     res.render('profile');
 })

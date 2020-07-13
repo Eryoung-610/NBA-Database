@@ -98,7 +98,7 @@
 
             <div>
                 <% team.players.forEach((player) => { %>
-                <% if (player.position === "SF" || player.position === "PF" || player.position === "C" || player.position ==="F-C") { %>
+                <% if (player.position === "SF" || player.position === "PF" || player.position === "C" || player.position ==="F-C" || player.position === "F") { %>
                 <div class="card" id="rosterCard">
                     <img id="playerPicture" src="<%= player.picture %>" alt="">
                     <h6><%= player.first_name + " " + player.last_name %></h6>

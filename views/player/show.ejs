@@ -25,13 +25,17 @@
             <hr>
         </div>
 
-        <div class="left-align">
+        <div class="left-align center-align">
             <% if (playerStats.data.length >= 1) { %>
+                <h5>Games Played : <%= playerStats.data[0].games_played%></h5>
                 <h5>Minutes Per Game: <%= playerStats.data[0].min%></h5>
                 <h5>Points Per Game: <%= playerStats.data[0].pts%></h5>
                 <h5>Rebounds Per Game: <%= playerStats.data[0].reb%></h5>
                 <h5>Assists Per Game: <%= playerStats.data[0].ast%></h5>
-
+                <h5>Blocks Per Game: <%= playerStats.data[0].blk%></h5>
+                <h5>Steals Per Game: <%= playerStats.data[0].stl%></h5>
+                <h5>3's Per Game: <%= playerStats.data[0].fg3m%></h5>
+                
             <% } else { %>
                 <h5>No current stats for this season</h5>
             <% } %>

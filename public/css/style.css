@@ -17,6 +17,10 @@ body {
   margin-bottom: 2%;
 }
 
+#aboutMe{
+  margin-right: 2em;
+}
+
 #logoTitle{
   height:65px;
 }

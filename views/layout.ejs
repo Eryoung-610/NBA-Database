@@ -12,7 +12,7 @@
     <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>NBA Team Builder</title>
+    <title>NBA Database 2020</title>
 </head>
 
 <body>
@@ -24,26 +24,32 @@
             <li id="test"><a href="/player">Players</a></li>
         </ul>
         <ul id="dropdown2" class="black dropdown-content">
+            <li id="test"><a href="/team">Current Teams</a></li>
+            <li id="test"><a href="/player">Players</a></li>
+        </ul>
+        <ul id="dropdown3" class="black dropdown-content">
             <li id="test"><a href="/team/new">Team</a></li>
             <li id="test"><a href="/player/new">Player</a></li>
         </ul>
 
         <nav class="black valign-wrapper">
             <div class="container nav-wrapper">
-                <a href="/home" class="brand-logo" id = "logoTitle"><img src="/images/basketball-64.png" id="ballLogo">NBA TEAM
-                    BUILDER</a>
+                <a href="/home" class="brand-logo" id="logoTitle"><img src="/images/basketball-64.png" id="ballLogo">NBA
+                    DATABASE</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <% if (currentUser) { %>
+                    <li><a href="/restartInfo">NBA Restart Information</a></li>    
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Create<i
+                    <li><a href="#" class="dropdown-trigger" data-target="dropdown3">Create<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a id = "profCircle" href="/profile"><i class="material-icons prefix">account_circle</i></a>
+                    <li><a id="profCircle" href="/profile"><i class="material-icons prefix">account_circle</i></a>
                     </li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/auth/logout">Logout</a></li>
                     <% } else { %>
-                    <li><a href="#" class="dropdown-trigger" data-target="dropdown1">View<i
+                        <li><a href="/restartInfo">NBA Restart Information</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="dropdown2">View<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="/auth/register">Register</a></li>
                     <li><a class="modal-trigger" href="#login">Login</a></li>
@@ -114,10 +120,13 @@
         </div>
 
         <div class="white-text black footer-copyright">
-            <div class="container">
+            <div class="container left-align">
                 © 2020 Eric Young
                 <a class="white-text right" id="aboutMe" href="/">About</a>
+                <a class="white-text right" id="aboutMe" href="/issues">Issues</a>
+
             </div>
+
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
