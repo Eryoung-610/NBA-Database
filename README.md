@@ -54,4 +54,5 @@ Notes : As balldontlie API did not include player pictures, I had to create my o
 
 ## Technologies Used
 **API** balldontlie
+
 **Node** Axios,BCrypt,Express, EJS, Express EJS Layouts, Express sessions, Helmet, Method-Override,Passport,Nodemon,Morgan,Sequelize
