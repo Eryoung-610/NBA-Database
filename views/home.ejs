@@ -9,6 +9,7 @@
 <body>
 
 
+
     <div class="container center-align">
         <h2>Don't know where to start?</h2>
         <img src="https://media.tenor.com/images/591d959261c492366416c42a3b4f6b7c/tenor.gif" alt="">
@@ -22,35 +23,98 @@
             </div>
             <div class="col s12 l5 offset-l1">
                 <h2 class="text-darken-4">Teams</h2>
-                <h5>Curious to see the details of each team? Click the button below to view all the current NBA teams and their roster.</h5>
+                <h5>Curious to see the details of each team? Click the button below to view all the current NBA teams
+                    and their roster.</h5>
                 <br>
                 <a class="waves-effect waves-light black btn" href="/team"><i
-                    class="material-icons right">chevron_right</i>Teams</a>
+                        class="material-icons right">chevron_right</i>Teams</a>
             </div>
         </div>
         <div class="row">
             <div class="col s14 l5 offset-l1 push-l7">
-                <img src="https://www.dctitleguy.com/wp-content/uploads/2020/02/Kobe-Bryant-2.jpg" alt="" class="responsive-img materialboxed">
+                <img src="https://www.dctitleguy.com/wp-content/uploads/2020/02/Kobe-Bryant-2.jpg" alt=""
+                    class="responsive-img materialboxed">
             </div>
             <div class="col s14 l4 offset-l1 pull-l4 right-align">
                 <h2 class="text-darken-4">Players</h2>
-                <h5>View all players dating back from 1979! Click the button below to see all players and their statistics!</h5>
+                <h5>View all players dating back from 1979! Click the button below to see all players and their
+                    statistics!</h5>
                 <br>
                 <a class="waves-effect waves-light black btn" href="/player"><i
-                    class="material-icons right">chevron_right</i>Players</a>
+                        class="material-icons right">chevron_right</i>Players</a>
             </div>
         </div>
         <div class="row">
             <div class="col s12 l5">
-                <img src="https://gmsrp.cachefly.net/images/20/02/12/66fbad8f025b1425c296c263956d0315/960.jpg" alt="" class="responsive-img materialboxed">
+                <img src="https://gmsrp.cachefly.net/images/20/02/12/66fbad8f025b1425c296c263956d0315/960.jpg" alt=""
+                    class="responsive-img materialboxed">
             </div>
+
+            <div id="login" class="modal">
+                <h5 class="container modal-close right-align" id="close">&#10005;</h5>
+                <div class="container modal-content center">
+                    <h4>Login</h4>
+    
+                    <form action="/auth/login" method="POST">
+    
+                        <div class="input-field">
+                            <i class="material-icons prefix">person</i>
+                            <input type="email" name="email" id="authEmail">
+                            <label for="authEmail">Email</label>
+                        </div>
+                        <br>
+    
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input type="password" name="password" id="pass">
+                            <label for="pass">Password</label>
+                        </div>
+    
+                        <input type="submit" value="Login" class="black btn">
+                        <br>
+    
+                        <br>
+                        <div>
+                            <a href="auth/register">Not a member? Register Here</a>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+
+
+
+            <ul id="dropdown4" class="black white-text dropdown-content center-align">
+                <li id = "test"><a href="/team/new"></a>Team</li>
+                <li id = "test"><a href="/player/new"></a>Player</li>
+            </ul>
+
+            <ul id="dropdown5" class="black white-text dropdown-content center-align">
+                <li id = "test"><a href="#login" class = "modal-trigger">Must be logged in to create</a></li>
+            </ul>
+
+            
+
+            <% if (currentUser) { %>
             <div class="col s12 l6 offset-l1">
                 <h2 class="text-darken-4">Build Your Own</h2>
                 <h5>Trying to build your own team or player? The button below will take you there!</h5>
-                    <br>
-                    <a class="waves-effect waves-light black btn" href="/home"><i
-                        class="material-icons right">chevron_right</i>Create</a>
+                <br>
+                <a href="#" class="dropdown-trigger waves-effect waves-light black btn white-text" 
+                    data-target="dropdown4"><i class="material-icons right">chevron_right</i>Create</a>
             </div>
+            <% } else { %>
+                <div class="col s12 l6 offset-l1">
+                    <h2 class="text-darken-4">Build Your Own</h2>
+                    <h5>Trying to build your own team or player? The button below will take you there!</h5>
+                    <br>
+                    <a href="#" class="dropdown-trigger waves-effect waves-light black btn white-text" 
+                        data-target="dropdown5"><i class="material-icons right">chevron_right</i>Create</a>
+                </div>
+            <%} %>
+
+
+
         </div>
     </section>
 
