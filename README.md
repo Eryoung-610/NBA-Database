@@ -9,7 +9,10 @@ NBA Database is a web based application revolving around the NBA and it's player
 
 ## How to Use
 Fork and clone
-npm i install for dependencies
+
+npm i install - for dependencies
+
+sequelize db:seed:all to populate db
 
 ## Project Planning
 Notes : As balldontlie API did not include player pictures, I had to create my own seeding file to accomodate for that. I had to manually input all 506 current NBA players into a 4000+ line long seeder file.
