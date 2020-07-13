@@ -32,7 +32,7 @@
             <li><a href="/player/new">Player</a></li>
         </ul>
 
-        <nav class="black valign-wrapper">
+        <nav class="black valign-wrapper sidenav-trigger">
             <div class="container nav-wrapper">
                 <a href="/home" class="brand-logo" id="logoTitle"><img src="/images/basketball-64.png" id="ballLogo">NBA
                     DATABASE</a>
@@ -47,12 +47,14 @@
                     </li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/auth/logout">Logout</a></li>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <% } else { %>
                         <li><a href="/restartInfo">NBA Restart Information</a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown2">View<i
                                 class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="/auth/register">Register</a></li>
                     <li><a class="modal-trigger" href="#login">Login</a></li>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <% } %>
                 </ul>
             </div>
