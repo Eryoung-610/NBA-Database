@@ -5,7 +5,11 @@
     "database": "ballislife",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "ssl" : true,
+    "dialectOptions": {
+      "ssl": {
+          "rejectUnauthorized" : false
+      }
+  },
     "operatorsAliases": false
   },
   "test": {
