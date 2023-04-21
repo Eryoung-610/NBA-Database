@@ -1,5 +1,7 @@
 # NBA Database
 
+## Heroku stopped free hosting. Looking into alternatives to host for deployment.
+
 Link to site : https://nba-db-project.herokuapp.com/
 
 ![Screenshot1](https://github.com/Eryoung-610/Project2/blob/master/Screenshot1.JPG)
